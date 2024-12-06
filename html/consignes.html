@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résultat Indice de Pollution</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .result-box {
+            border: 2px solid #28a745;
+            border-radius: 15px;
+            padding: 20px;
+            background-color: #e8f5e9;
+            text-align: center;
+        }
+        .result-title {
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Votre Résultat</h1>
+        <div class="result-box mt-4">
+            <p class="result-title">Votre indice de pollution est :</p>
+            <p id="indicePollution" class="display-4"></p>
+            <button type="button" class="btn btn-success mt-4" onclick="window.location.href='consignes.html'">Voir les Consignes</button>
+        </div>
+    </div>
+
+    <script>
+        // Récupérer l'indice final depuis le localStorage et l'afficher
+        const indiceFinal = localStorage.getItem('indicePollution');
+        document.getElementById('indicePollution').innerText = indiceFinal + "%";
+    </script>
+</body>
+</html>

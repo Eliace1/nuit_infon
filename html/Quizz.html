@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Quizz</title>
+    <!-- Intégration de Bootstrap via le CDN -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .question-box {
+            border: 2px solid #007bff;
+            border-radius: 15px;  /* Bordures incurvées */
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .question-title {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+    <script src="pollution.js"></script>
+
+</head>
+<body>
+    <header class="bg-dark text-white text-center p-3 container-fluid">
+        <h1 style="font-family: 'Times New Roman', Times, serif;">GRAND QUIZZ</h1>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">ACCUEUIL</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav"></div>
+        </nav>
+    </header><br><br><br>
+    
+    <div class="container">
+        <h1 class="text-center mt-5">Bienvenue sur le Quizz</h1>
+        <p class="text-center">Ceci est une page de quizz simple indiquant votre indice de pollution.</p>
+        
+        <!-- Boîte de question avec bordures incurvées -->
+        <div class="question-box mt-4">
+            <p class="question-title">Question : Vous achetez une boisson à emporter près de la mer. Quelle option choisissez-vous ?</p>
+            <form>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" id="option1" value="option1">
+                    <label class="form-check-label" for="option1">A. Une bouteille en plastique.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" id="option2" value="option2">
+                    <label class="form-check-label" for="option2">B. Une bouteille réutilisable que vous avez apportée.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" id="option3" value="option3">
+                    <label class="form-check-label" for="option3">C. Une canette en métal.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" id="option4" value="option4">
+                    <label class="form-check-label" for="option4">D. Vous ne réfléchissez pas à l'emballage.</label>
+                </div>
+                <div class="text-center mt-4">
+                    <button type="button" class="btn btn-primary" onclick="enregistrerReponse('suivant1')">Suivant</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Intégration de Bootstrap JS et des dépendances -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

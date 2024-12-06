@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résultat du Quizz</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h1>Votre Indice de Pollution</h1>
+        <p id="indicePollution" class="mt-4" style="font-size: 1.5em;"></p>
+        <button class="btn btn-primary mt-3" onclick="window.location.href='secand.html'">PAGE INSTRUCTIVE</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const pages = ['Quizz.html', 'suivant1.html', 'suivant2.html', 'suivant3.html', 'suivant4.html'];
+            let score = 0;
+
+            pages.forEach(page => {
+                const reponse = localStorage.getItem(page);
+                if (reponse) {
+                    switch (reponse) {
+                        case 'option1': score += 10; break;  // Option la plus écologique
+                        case 'option2': score += 30; break;  // Moins écologique
+                        case 'option3': score += 20; break;  // Moyennement écologique
+                        case 'option4': score += 40; break;  // Option non écologique
+                    }
+                }
+            });
+
+            const indiceFinal = (score / (pages.length * 40)) * 100; // Normalisation sur 100%
+            document.getElementById('indicePollution').innerText = `Votre indice de pollution est : ${indiceFinal.toFixed(2)}%`;
+        });
+
+        function recommencerQuiz() {
+            localStorage.clear();  // Réinitialiser le quiz
+            window.location.href = 'Quizz.html';
+        }
+    </script>
+</body>
+</html>
