@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+           <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Océan et Corps Humain</title>
+          <style>
+            .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('img.jpg'); /* Remplacez par l'URL de l'image de fond réelle */
+      background-size: cover;
+      background-position: center;
+      filter: blur(5px);
+      z-index: -1; 
+    }
+               body {
+  font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom, #b3e5fc, #e3f2fd);
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+
+    h1 {
+      text-align: center;
+      color: #0d47a1;
+    }
+
+    .pollution-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .pollution-container img {
+      width: 300px;
+      height: auto;
+      border: 2px solid #0d47a1;
+      border-radius: 5px;
+      margin-top: 20px;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .button-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #0d47a1;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    .button-container button:hover {
+      background-color: #004d40;
+    }
+
+    /* Partie gauche : Corps humain */
+    .human-body {
+      width: 45%;
+      text-align: center;
+      position: relative;
+    }
+
+    .human-body img {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .body-part {
+      position: absolute;
+      background: rgba(255, 0, 0, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+    }
+
+    /* Styles des zones cliquables */
+    .heart { top: 50%; left: 45%; width: 40px; height: 40px; }
+    .lung { top: 40%; left: 35%; width: 50px; height: 50px; }
+    .stomach { top: 65%; left: 45%; width: 50px; height: 50px; }
+    .kidney { top: 70%; left: 35%; width: 40px; height: 40px; }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Partie droite : Océan et pollution */
+    .ocean-pollution {
+      width: 45%;
+      padding: 10px;
+      background: #0d47a1;
+      color: #fff;
+      border-radius: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .pollution-impact {
+      margin-top: 20px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+    }
+    header {
+    padding: 20px;
+    background: #004d40;
+    color: #ffffff;
+    }
+    
+    @media screen and (max-width:780px) {
+      .container  .human-body{
+            width: 80%;
+        }
+        .container .ocean-pollution{
+            width: 80%;
+        }
+        header{
+            width: 80%;
+        }
+        body{
+            flex-wrap: wrap;
+            margin-left: 100px;
+        }
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <h1>Évolution de la Pollution de l'Océan</h1>
+
+  <div class="pollution-container">
+    <!-- Image dynamique -->
+    <img id="pollutionImage" src="animals-plastic-nationalgeographic_2636691_adapt_1900_1.jpg" alt="Niveau de pollution : 25%" />
+
+    <!-- Boutons de contrôle -->
+    <div class="button-container">
+                  <button onclick="updatePollution(25)">25%</button>
+                       <button onclick="updatePollution(50)">50%</button>
+<button onclick="updatePollution(75)">75%</button>
+ <button onclick="updatePollution(100)">100%</button>
+                     </div>
+  </div>
+                     <h1>Race for Water: L'Océan et le Corps Humain</h1>
+ <p>Découvrez les liens fascinants entre les fonctions humaines et les mécanismes océaniques.</p>
+                            </header>
+              <div class="background-image"></div> 
+  <div class="container">
+                     <div class="human-body">
+ <h2>Parties essentielles du corps humain</h2>
+         <img src="14-2.jpg" alt="Corps humain" />
+               <div class="body-part heart" data-info="Le coeur est affecté par les microplastiques qui peuvent provoquer des inflammations cardiaques."></div>
+<div class="body-part lung" data-info="Les poumons souffrent d'une pollution atmosphérique accrue par les gaz relâchés par les océans pollués."></div>
+                <div class="body-part stomach" data-info="Les toxines marines, ingérées via les poissons, affectent l'estomac et la digestion."></div>
+      <div class="body-part kidney" data-info="Les reins filtrent des substances toxiques provenant d'une mauvaise qualité de l'eau."></div>
+  </div>
+
+   
+    <div class="ocean-pollution">
+      <h2>Pollution des Océans</h2>
+      <p>La pollution de l'océan a un impact significatif sur la santé humaine.</p>
+      <div id="pollution-impact" class="pollution-impact">
+        <p>Cliquez sur une partie du corps pour découvrir l'impact !</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    function showPollution(stageId) {
+      document.querySelectorAll('.pollution-image').forEach(image => {
+        image.style.opacity = 0;
+      });
+      document.getElementById(stageId).style.opacity = 1;
+    }
+    const bodyParts = document.querySelectorAll('.body-part');
+    const pollutionImpact = document.getElementById('pollution-impact');
+
+    
+    bodyParts.forEach(part => {
+      part.addEventListener('click', () => {
+        const info = part.getAttribute('data-info'); 
+        pollutionImpact.innerHTML = `<p>${info}</p>`;
+      });
+    });
+    function updatePollution(percentage) {
+      const image = document.getElementById('pollutionImage');
+      switch (percentage) {
+        case 25:
+          image.src = 'animals-plastic-nationalgeographic_2636691_adapt_1900_1.jpg';
+          image.alt = 'Niveau de pollution : 25%';
+          break;
+        case 50:
+          image.src = 'istockphoto-1254928076-2048x2048.jpg';
+          image.alt = 'Niveau de pollution : 50%';
+          break;
+        case 75:
+          image.src = 'istockphoto-464077429-2048x2048.jpg';
+          image.alt = 'Niveau de pollution : 75%';
+          break;
+        case 100:
+          image.src = 'istockphoto-1369921282-2048x2048.jpg';
+          image.alt = 'Niveau de pollution : 100%';
+          break;
+        default:
+          image.src = 'animals-plastic-nationalgeographic_2636691_adapt_1900_1.jpg';
+          image.alt = 'Niveau de pollution : 25%';
+      }
+    }
+  </script>
+</body>
+</html>
